@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.box-text{
+    text-align: center;
+    margin-top: 20px;
+    color:  #ffdf00;
+}
+
+.box-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: fit-content; /* Max width for larger screens */
+    height: 50vh; /* Responsive height */
+    margin: 0 auto;
+  }
+  .box-img img {
+    max-width: 30%; /* Responsive image size */
+    height: auto;
+    object-fit: contain; /* Ensures image scales without distortion */
+  }
+  @media (max-width: 768px) {
+
+  }
