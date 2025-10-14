@@ -1,43 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import EpisodeCard from '../components/Episodes/EpisodeCard';
 
-function Episodes() {
+const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://thesimpsonsapi.com/api/episodes")
-      .then((response) => {
-        if (!response.ok) throw new Error("Error al cargar los episodios");
-        return response.json();
-      })
-      .then((data) => {
-        setEpisodes(data.results || []);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    fetch('https://thesimpsonsapi.com/api/episodes')
+      .then((response) => response.json())
+      .then((data) => setEpisodes(data.results))
+      .catch((error) => console.error('Error al obtener episodios:', error));
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h1 className="mb-3 text-center">pisodios de Los Simpsons</h1>
-      <div className="list-group">
-        {episodes.map((episode) => (
-          <div key={episode.id} className="list-group-item">
-            <h5>{episode.name}</h5>
-            <p>
-              <strong>Temporada:</strong> {episode.season} <br />
-              <strong>Episodio:</strong> {episode.number} <br />
-              <strong>Fecha de emisión:</strong> {episode.air_date}
-            </p>
-          </div>
-        ))}
-      </div>
+    <div
+      style={{
+        minHeight: 'calc(100vh - 150px)', width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start', gap: '20px', padding: '20px',
+      }}
+    >
+      {episodes.length > 0 ? (
+        episodes.map((ep) => <EpisodeCard key={ep.id} data={ep} />)
+      ) : (
+        <p>Cargando episodios...</p>
+      )}
     </div>
   );
-}
+};
 
 export default Episodes;
