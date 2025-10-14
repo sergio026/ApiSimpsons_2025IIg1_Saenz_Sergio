@@ -19,7 +19,7 @@ const Home = () => {
               <p className="card-text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.fuga quisquam.
               </p>
-              <Link className="btn btn-primary" to="/characters">Ver mas</Link>
+              <Link className="btn btn-primary" to="/characters">Ver masss</Link>
             </div>
           </div>
         </div>
