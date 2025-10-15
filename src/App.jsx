@@ -6,6 +6,7 @@ import Characters from "./pages/Characters";
 import Episodes from "./pages/Episodes";
 import Locations from "./pages/Locations";
 import Footer from "./components/Footer/Footer";
+import Pagination from "./components/Pagination/Pagination";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/locations" element={<Locations />} />
             </Routes>
           </div>
+          {/* <Pagination/> */}
         </main>
         <Footer />
       </div>

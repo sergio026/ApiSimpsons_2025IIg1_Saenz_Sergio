@@ -1,0 +1,58 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0;
+    font-family: 'Poppins', sans-serif;
+    flex-wrap: wrap;
+}
+
+.pagination span {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 500;
+}
+
+.pagination .btn {
+    background: #fbc02d;
+    /* Amarillo Simpson */
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.pagination .btn:hover {
+    background: #ffd54f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .btn:active {
+    transform: scale(0.98);
+}
+
+.pagination .btn:disabled {
+    background: #e0e0e0;
+    color: #777;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+@media (max-width: 600px) {
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pagination .btn {
+        width: 80%;
+    }
+}

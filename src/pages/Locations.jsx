@@ -1,17 +1,31 @@
 import { useState, useEffect } from "react";
 import LocationListItem from "../components/Locations/Locations";
-
+import Pagination from '../components/Pagination/Pagination'
 
 function Locations() {
   const [locations, setLocations] = useState([]);
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
 
-  useEffect(() => {
-    fetch("https://thesimpsonsapi.com/api/locations")
-      .then((response) =>  response.json())
-      .then((data) => setLocations(data.results ))
-      .catch((err) =>  console.error('Error al obtener Lugares:', err))
-  }, []);
 
+  const fetchLocations = async (pageNum) => {
+    try {
+      const response = await fetch(`https://thesimpsonsapi.com/api/locations?page=${pageNum}`)
+      const data = await response.json()
+      setLocations(data.results)
+      setTotalPages(data.total_pages || 24)
+    } catch (error) {
+      console.error('Error al obtener lugares:', error)
+    }
+  }
+
+
+useEffect(() => {
+    fetchLocations(page)
+  }, [page])
+
+  const handlePrev = () => setPage((prev) => Math.max(prev - 1, 1))
+  const handleNext = () => setPage((prev) => Math.min(prev + 1, totalPages))
 
   return (
     <div className="container mt-4">
@@ -26,6 +40,7 @@ function Locations() {
           <p className="text-center">No se encontraron lugares.</p>
         )}
       </div>
+      <Pagination page={page} totalPages={totalPages} onPrev={handlePrev} onNext={handleNext} />
     </div>
   );
 }
