@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../src/style/Character/CharacterCard.css';
+import '../Characters/CharacterCard.css';
 
 const CharacterCard = ({ data }) => {
   const [expanded, setExpanded] = useState(false);

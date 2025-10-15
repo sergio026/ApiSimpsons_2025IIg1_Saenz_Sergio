@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import LocationListItem from "../components/Places/Places";
+import LocationListItem from "../components/Locations/Locations";
 
 
 function Locations() {

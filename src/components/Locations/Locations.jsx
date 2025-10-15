@@ -1,5 +1,5 @@
 import React from "react";
-import "../Places/Places.css";
+import "./Locations.css";
 
 const LocationListItem = ({ data }) => {
     return (
