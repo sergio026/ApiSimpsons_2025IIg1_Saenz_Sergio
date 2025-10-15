@@ -7,18 +7,9 @@ function Locations() {
 
   useEffect(() => {
     fetch("https://thesimpsonsapi.com/api/locations")
-      .then((response) => {
-        if (!response.ok) throw new Error("Error al cargar los lugares");
-        return response.json();
-      })
-      .then((data) => {
-        setLocations(data.results || []);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+      .then((response) =>  response.json())
+      .then((data) => setLocations(data.results ))
+      .catch((err) =>  console.error('Error al obtener Lugares:', err))
   }, []);
 
 
