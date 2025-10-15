@@ -62,7 +62,7 @@ const Characters = () => {
         <p>Cargando personajes...</p>
       )}
       </div>
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: '21px' }}>
         <Pagination page={page} totalPages={totalPages} onPrev={handlePrev} onNext={handleNext} />
       </div>
     </div>
