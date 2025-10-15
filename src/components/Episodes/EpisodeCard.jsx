@@ -38,4 +38,5 @@ const EpisodeCard = ({ data }) => {
       </div>
     );
   };
+  
 export default EpisodeCard;
