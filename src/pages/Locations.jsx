@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import LocationListItem from "../components/Places/Places";
+
 
 function Locations() {
   const [locations, setLocations] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("https://thesimpsonsapi.com/api/locations")
@@ -21,27 +21,15 @@ function Locations() {
       });
   }, []);
 
+
   return (
     <div className="container mt-4">
-      <h1 className="mb-4 text-center">Lugares Icónicos de Los Simpsons</h1>
+      <h1 className="mb-4 text-center text-warning">Lugares Icónicos de Los Simpsons</h1>
 
-      <div className="row g-4">
+      <div className="locations-container">
         {locations.length > 0 ? (
           locations.map((location) => (
-            <div key={location.id} className="col-md-4">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">{location.name}</h5>
-                  <p className="card-text">
-                    <strong>Tipo:</strong> {location.type || "Desconocido"} <br />
-                    <strong>Descripción:</strong>{" "}
-                    {location.description
-                      ? location.description
-                      : "Sin descripción disponible."}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <LocationListItem key={location.id} data={location} />
           ))
         ) : (
           <p className="text-center">No se encontraron lugares.</p>
