@@ -25,16 +25,16 @@ function Navbar() {
         >
           <ul className="navbar-nav ">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/">Inicio</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/characters">Characters</Link>
+              <Link className="nav-link" to="/characters">Personajes</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/episodes">Episodes</Link>
+              <Link className="nav-link" to="/episodes">Episodios</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/locations">Locations</Link>
+              <Link className="nav-link" to="/locations">lugares</Link>
             </li>
           </ul>
         </div>

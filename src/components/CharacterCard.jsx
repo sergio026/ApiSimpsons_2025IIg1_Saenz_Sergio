@@ -3,11 +3,8 @@ import '../../src/style/Character/CharacterCard.css';
 
 const CharacterCard = ({ data }) => {
   const [expanded, setExpanded] = useState(false);
-
   const toggleExpand = () => setExpanded(!expanded);
-
   const max_palabras = 80;
-
   const phrasesText = data.phrases.join(', ');
   const shortText = phrasesText.length > max_palabras ? phrasesText.slice(0, max_palabras) + '...' : phrasesText;
 

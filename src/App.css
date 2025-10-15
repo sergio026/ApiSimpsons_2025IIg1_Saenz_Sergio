@@ -4,7 +4,6 @@
     box-sizing: border-box;
   }
   
-  /* Layout principal sin desplazamiento lateral */
   main {
     padding: 20px;
     width: 100%;
