@@ -15,13 +15,13 @@ const Characters = () => {
   }, [])
 
   return (
-    <div style={{height: 'calc(100vh - 150px)', width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '20px'}}>
+    <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '20px'}}>
       {
         characters.length > 0 ? characters.map(
           character => <CardCharacters key={character.id} data={character} />
         ) : <p>Cargando...</p>
       }
-    </div>
+      </div>
   )
 }
 

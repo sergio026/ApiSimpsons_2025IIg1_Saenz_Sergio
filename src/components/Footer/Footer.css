@@ -1,17 +1,18 @@
 .footer {
-    background: linear-gradient(135deg, #f1db75, #f1d893);
+    background: linear-gradient(135deg, #fbc02d, #fbc02d);
     color: #333;
     padding: 20px 20px 10px;
     border-top: 4px solid #fbc02d;
     font-family: 'Poppins', sans-serif;
 }
 
+
 .footer-container {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "footer-about" "footer-social";
+    grid-template-areas:
+        "footer-about" "footer-social";
 }
 
 .footer-about {

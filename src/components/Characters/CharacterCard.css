@@ -17,9 +17,8 @@
   padding: 16px;
   text-align: justify;
 
-  width: 100%; 
+  /* width: 100%;  */
   max-width: 350px;
-  /* min-height: 420px;  */
   min-height: 580px; 
   margin: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);

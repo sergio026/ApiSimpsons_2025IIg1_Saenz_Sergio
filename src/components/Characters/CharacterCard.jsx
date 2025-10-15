@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Characters/CharacterCard.css';
+import './CharacterCard.css';
 
 const CharacterCard = ({ data }) => {
   const [expanded, setExpanded] = useState(false);
@@ -39,5 +39,6 @@ const CharacterCard = ({ data }) => {
     </div>
   );
 };
+
 
 export default CharacterCard;
